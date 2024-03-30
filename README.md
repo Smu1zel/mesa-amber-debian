@@ -1,0 +1,1 @@
+This repo is designed to provide Mesa Amber builds for Debian and Debian-based distros. The title of each release depicts the environment the build was created with. If you need a build for a particular architecture, make an issue for it.

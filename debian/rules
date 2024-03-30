@@ -37,7 +37,7 @@ DRI_DRIVERS =
 EGL_PLATFORMS = x11
 
 confflags_DRI3 = -Ddri3=disabled
-confflags_OSMESA =  -Dosmesa=false
+confflags_OSMESA =  -Dosmesa=true
 confflags_SSE2 = -Dsse2=true
 
 # hurd doesn't do direct rendering
@@ -90,9 +90,9 @@ confflags += \
 	-Dbuild-tests=true \
 	-Dgbm=disabled \
 	-Ddri3=disabled \
-	-Dgles1=disabled \
+	-Dgles1=enabled \
 	-Dgles2=disabled \
-	-Dosmesa=false \
+	-Dosmesa=true \
 	-Dllvm=disabled \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_EGL) \

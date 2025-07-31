@@ -37,7 +37,6 @@ DRI_DRIVERS =
 EGL_PLATFORMS = x11
 
 confflags_DRI3 = -Ddri3=disabled
-confflags_OSMESA =  -Dosmesa=false
 confflags_SSE2 = -Dsse2=true
 
 # hurd doesn't do direct rendering
@@ -88,11 +87,16 @@ confflags += \
 	-Dgallium-omx=disabled \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
-	-Dgbm=disabled \
+	# Not sure if this will work. But Xorg is getting phased out virtually everywhere, so might as well.
+	-Dgbm=enabled \
 	-Ddri3=disabled \
-	-Dgles1=disabled \
-	-Dgles2=disabled \
-	-Dosmesa=false \
+	# May be used by some old applications.
+	-Dgles1=enabled \
+	# Supported by classic i915.
+	-Dgles2=enabled \
+	-Dosmesa=true \
+	# The amber branch is too unmaintained to work with modern LLVM. Arch Linux does the same thing.
+	# TODO: Maybe fork amber myself and fix this?
 	-Dllvm=disabled \
 	$(confflags_DIRECT_RENDERING) \
 	$(confflags_EGL) \

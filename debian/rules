@@ -87,8 +87,7 @@ confflags += \
 	-Dgallium-omx=disabled \
 	-Db_ndebug=true \
 	-Dbuild-tests=true \
-	# Not sure if this will work. But Xorg is getting phased out virtually everywhere, so might as well.
-	-Dgbm=enabled \
+	-Dgbm=disabled \
 	-Ddri3=disabled \
 	# May be used by some old applications.
 	-Dgles1=enabled \
